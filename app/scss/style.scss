@@ -1,3 +1,7 @@
+@import 'vars';
+@import 'global';
+@import 'fonts';
+
 html {
     box-sizing: border-box;
 }
@@ -6,6 +10,119 @@ html {
 *::after {
     box-sizing: inherit;
 }
-.box {
-    display: flex;
+//start header
+header {
+    background-color: #44433e;
 }
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    height: 121px;
+    align-items: center;
+}
+.menu_list {
+    li {
+        display: inline-block;
+        &+li{
+            margin-left: 15px;
+        }
+    }
+    a {
+        font-size: 13px;
+        font-family: 'Myriad Pro';
+        text-transform: uppercase;
+        position: relative;
+        color: $text; /*задаём цвет ссылки*/
+        cursor: pointer;
+        &:hover {
+            color: $blue;
+        }
+    }
+    a:after {
+        position: absolute;
+        left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+        width: 0;/*задаём длинну линии до наведения курсора*/
+        bottom: -50px;
+        height: 2px; /*задаём ширину линии*/
+        background-color: $blue; /*задаём цвет линии*/
+        content: "";
+        transition: width 0s ease-out; /*задаём время анимации*/
+    }
+    a:hover:after,
+    a:focus:after {
+	width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+    }
+}
+
+//end header
+
+//start content
+.content {
+    background-color: #3c3c3c;
+    height: 895px;
+    width: 100%;
+}
+.content__inner {
+    text-align: center;
+    padding: 240px 0px 244px;
+}
+.content__frame {
+    max-width: 634px;
+    margin: 0 auto;
+}
+.content__inner-text__top {
+    font-size: 28px;
+    color: #fff;
+    @include f400;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    span {
+        color: $blue;
+    }
+}
+.content__inner-title {
+    text-transform: uppercase;
+    font-size: 58px;
+    color: #fff;
+    @include f700;
+    margin-bottom: 40px;
+    line-height: 54px;
+}
+.content__inner-text__bottom {
+    font-size: 27px;
+    color: #ad9797;
+    @include f400;
+    margin-bottom: 150px;
+}
+.content__btn {
+    text-transform: uppercase;
+    padding: 16px 30px;
+    background-color: $blue;
+    color: #fff;
+    @include f400;
+    width: 166px;
+    border-radius: 4px;
+    border-top: 3px solid #fff;
+    &+.content__btn {
+        margin-left: 31px;
+    }
+}
+
+//end content
+
+//start different
+.different__inner {
+    display: flex;
+    justify-content: space-between;
+}
+.different__item {
+    max-width: 380px;
+    width: 100%;
+    &-images {
+        min-height: 274px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+}
+//end different
