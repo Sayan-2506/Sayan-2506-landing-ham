@@ -132,13 +132,6 @@ header {
     background-color: #fff;
     padding: 100px 0px 95px;
 }
-.features__title {
-    text-align: center;
-    font-size: 36px;
-    color: #4e4e4e;
-    @include f400;
-    margin-bottom: 114px;
-}
 .features__inner {
     display: flex;
     justify-content: flex-start;
@@ -212,7 +205,7 @@ header {
         @include f400;
         text-transform: uppercase;
         text-align: left;
-        margin-bottom: 60px;
+        margin-bottom: 50px;
     }
 }
 .about__item-line {
@@ -236,3 +229,75 @@ header {
 
 
 //end about
+
+//start amazing
+.amazing {
+    background-color: #f8fcfe;
+    padding: 100px 0px 100px;
+}
+.amazing__inner {
+    text-align: center;
+}
+.amazing-btn {
+    margin-bottom: 70px;
+    button {
+        padding: 20px 25px;
+        background-color: #fff;
+        border: 1px solid #ebebeb;
+        position: relative;
+        outline: none;
+        &.mixitup-control-active {
+            &:after {
+                position: absolute;
+                left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+                width: 0;/*задаём длинну линии до наведения курсора*/
+                bottom: 52px;
+                height: 2px; /*задаём ширину линии*/
+                background-color: $blue; /*задаём цвет линии*/
+                content: "";
+                transition: width 0s ease-out; /*задаём время анимации*/
+            }
+            &:hover:after,
+            &:focus:after {
+            width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+            }
+        }
+    }
+}
+.amazing__inner-box {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.more {
+    padding: 20px;
+    background-color: $blue;
+    color: #fff;
+    font-size: 14px;
+    @include f700;
+    border-radius: 3px;
+    margin-top: 75px;
+    text-align: center;
+    padding-left: 50px;
+    position: relative;
+}
+.more__icon {
+    position: absolute;
+    left: 615px;
+    bottom: -3271px;
+    cursor: pointer;
+    z-index: 1;
+}
+.amazing__item {
+    flex-basis: calc(25%-30px);
+    max-width: 286px;
+    width: 100%;
+    &-img {
+        min-height: 208px;
+        display: block;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+//end amazing

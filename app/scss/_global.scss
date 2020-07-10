@@ -33,3 +33,10 @@ body {
     margin: 0 auto;
     padding: 0 15px;
 }
+.title {
+    text-align: center;
+    font-size: 36px;
+    @include f400;
+    margin-bottom: 110px;
+    color: $title;
+}
