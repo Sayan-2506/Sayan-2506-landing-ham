@@ -23,6 +23,7 @@
     "slick-carousel": "^1.8.1"
   },
   "dependencies": {
+    "icomoon": "^1.0.0",
     "mixitup": "^3.3.1"
   }
 }
