@@ -21,6 +21,9 @@ header {
     align-items: center;
 }
 .menu_list {
+    .menu__btn {
+        display: none;
+    }
     li {
         display: inline-block;
         &+li{
@@ -247,6 +250,7 @@ header {
         border: 1px solid #ebebeb;
         position: relative;
         outline: none;
+        cursor: pointer;
         &.mixitup-control-active {
             &:after {
                 position: absolute;
@@ -261,6 +265,12 @@ header {
             &:hover:after,
             &:focus:after {
             width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+            }
+            &:first-child:hover:after {
+                width: 0;
+            }
+            &:first-child:focus:after {
+                width: 100%;
             }
         }
     }
@@ -467,7 +477,6 @@ header {
         justify-content: center;
         align-items: center;
         margin: 50px auto 25px;
-        transition: all .5s;
         border-radius: 100%;
     }
     &-price {
@@ -679,16 +688,18 @@ header {
 }
 .team__inner {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -30px;
 }
 .team__item {
     max-width: 262px;
     width: 100%;
     border: 1px solid #dae9e6;
+    flex-basis: calc(25%-30px);
+    margin-left: 30px;
     &:hover .team__item-content {
         background-color: $blue;
-    }
-    & + .team__item {
-        margin-left: 30px;
     }
     &-image {
         min-height: 224px;
@@ -1000,6 +1011,7 @@ form {
         padding-bottom: 35px;
         border-bottom: 1px solid #294453;
         button {
+            outline: none;
             width: 65px;
             height: 35px;
             background-color: transparent;
@@ -1078,4 +1090,8 @@ form {
         }
     }
 }
+.tiger.active{
+    background-color: $blue;
+}
 //end footer
+@import 'media';
